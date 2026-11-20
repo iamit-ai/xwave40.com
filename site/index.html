@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>xWave40 LLP | AI-Powered Software</title>
+<meta name="description" content="xWave40 LLP builds AI-powered software: e-governance platforms, AI solutions, legal compliance tools, automation and digital products for governments and businesses.">
+<link rel="canonical" href="https://xwave40.com/">
+<meta property="og:title" content="xWave40 LLP | AI-Powered Software">
+<meta property="og:description" content="E-governance, AI, legal compliance, product development and automation.">
+<meta property="og:url" content="https://xwave40.com/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://xwave40.com/assets/og-image.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20128%20128%22%20width%3D%22512%22%20height%3D%22512%22%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2224%22%20fill%3D%22%23070b14%22/%3E%3Cg%20transform%3D%22translate%2814%2C14%29%20scale%281.0%29%22%3E%3CclipPath%20id%3D%22wc3%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2240%22/%3E%3C/clipPath%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2244%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223.2%22%20opacity%3D%220.55%22/%3E%3Cg%20clip-path%3D%22url%28%23wc3%29%22%3E%3Cpath%20d%3D%22M14%2058%20C%2026%2030%2C%2038%2030%2C%2050%2050%20S%2074%2070%2C%2086%2040%22%20transform%3D%22translate%280%2C-16%29%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%20opacity%3D%220.35%22/%3E%3Cpath%20d%3D%22M14%2058%20C%2026%2030%2C%2038%2030%2C%2050%2050%20S%2074%2070%2C%2086%2040%22%20transform%3D%22translate%280%2C-8%29%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20opacity%3D%220.6%22/%3E%3Cpath%20d%3D%22M14%2058%20C%2026%2030%2C%2038%2030%2C%2050%2050%20S%2074%2070%2C%2086%2040%22%20transform%3D%22translate%280%2C0%29%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%20opacity%3D%221%22/%3E%3C/g%3E%3Ccircle%20cx%3D%2286%22%20cy%3D%2240%22%20r%3D%226.5%22%20fill%3D%22%23fff%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@400;600&family=Barlow:wght@400;500&family=Barlow+Semi+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400&family=Noto+Sans+Devanagari:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: mission-control minimalism. Black full-bleed panels, uppercase condensed type pinned bottom-left, hairline rules, outlined buttons. */
+:root {
+  --bg: #070b14;
+  --panel: #0f1e3a;
+  --signal: #1f6fd1;
+  --line: rgba(255,255,255,0.14);
+  --text: #f5f5f5;
+  --muted: #a3abb8;
+  --glow: #4aa8ff;
+  --font-display: "Barlow Semi Condensed", "Arial Narrow", "Segoe UI", sans-serif;
+  --font-body: "Barlow", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  --font-brand: "Lexend Exa", "Segoe UI", sans-serif;
+  --max: 1280px;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+canvas, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 2px solid var(--text); outline-offset: 4px; }
+h1, h2, h3 {
+  font-family: var(--font-display); text-transform: uppercase; margin: 0;
+  line-height: 1.02; letter-spacing: 0.01em; text-wrap: balance;
+}
+h1 { font-size: clamp(2.6rem, 7vw, 5.6rem); font-weight: 700; }
+h2 { font-size: clamp(2rem, 4.6vw, 3.6rem); font-weight: 700; }
+h3 { font-size: 1.35rem; font-weight: 600; letter-spacing: 0.03em; }
+p { margin: 0; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 clamp(18px, 4vw, 48px); }
+.kicker {
+  display: block; font-family: var(--font-display); font-weight: 600; font-size: 0.9rem;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px;
+}
+.mono { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em; color: var(--muted); }
+
+/* Buttons: outlined rectangle that fills on hover */
+.btn {
+  display: inline-block; position: relative; overflow: hidden; isolation: isolate;
+  border: 2px solid var(--text); background: transparent; color: var(--text);
+  font-family: var(--font-display); font-weight: 600; font-size: 0.95rem;
+  letter-spacing: 0.16em; text-transform: uppercase; padding: 15px 34px; cursor: pointer;
+  transition: color .3s ease;
+}
+.btn::before {
+  content: ""; position: absolute; inset: 0; background: var(--text);
+  transform: translateY(101%); transition: transform .3s ease; z-index: -1;
+}
+.btn:hover { color: var(--bg); }
+.btn:hover::before { transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { .btn::before, .btn { transition: none; } }
+
+/* Header */
+header.site { position: absolute; top: 0; left: 0; right: 0; z-index: 30; }
+.nav { display: flex; align-items: center; justify-content: space-between; height: 92px; gap: 24px; }
+.brand { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-weight: 700; font-size: 1.6rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.brand .logo { height: 40px; width: auto; }
+.logo-foot { height: 34px; width: auto; }
+.lockup { display: inline-flex; flex-direction: column; gap: 4px; }
+.lockup .tagline { font-family: var(--font-brand); font-weight: 600; text-transform: uppercase; letter-spacing: 0.09em; color: var(--glow); white-space: nowrap; }
+.brand .lockup .tagline { font-size: 9.6px; padding-left: 2px; }
+.foot .lockup .tagline { font-size: 8.2px; padding-left: 2px; letter-spacing: 0.09em; }
+footer.site { background: var(--panel); border-top: 2px solid transparent; border-image: linear-gradient(90deg, var(--signal), var(--glow)) 1; }
+.kicker { font-family: var(--font-brand) !important; font-size: 0.78rem !important; letter-spacing: 0.18em !important; color: var(--glow) !important; }
+
+.foot-brand { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.brand small { font-size: 0.7rem; letter-spacing: 0.2em; color: var(--muted); font-weight: 600; align-self: flex-end; margin-bottom: 5px; }
+.nav-links { display: flex; gap: 34px; align-items: center; }
+.nav-links a {
+  font-family: var(--font-display); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.16em;
+  text-transform: uppercase; position: relative; padding: 6px 0;
+}
+.nav-links a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--text);
+  transform: scaleX(0); transform-origin: left; transition: transform .25s ease;
+}
+.nav-links a:hover::after { transform: scaleX(1); }
+.menu-toggle {
+  display: none; background: none; border: 0; color: var(--text); cursor: pointer; padding: 8px;
+  width: 44px; height: 44px; position: relative; z-index: 40;
+}
+.menu-toggle span, .menu-toggle span::before, .menu-toggle span::after {
+  position: absolute; left: 10px; width: 24px; height: 2px; background: var(--text); content: ""; transition: transform .25s ease;
+}
+.menu-toggle span { top: 21px; }
+.menu-toggle span::before { left: 0; top: -7px; }
+.menu-toggle span::after { left: 0; top: 7px; }
+.menu-toggle[aria-expanded="true"] span { background: transparent; }
+.menu-toggle[aria-expanded="true"] span::before { transform: translateY(7px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span::after { transform: translateY(-7px) rotate(-45deg); }
+
+/* Full-bleed panels */
+.panel { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+.panel canvas.bg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.panel .shade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(7,11,20,0.85) 0%, rgba(7,11,20,0.2) 45%, rgba(7,11,20,0) 70%); pointer-events: none; }
+.panel-content { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: flex-end; }
+
+.hero { min-height: max(640px, 92vh); }
+.hero .shade { background: linear-gradient(to top, rgba(7,11,20,0.35) 0%, rgba(7,11,20,0.1) 40%, rgba(7,11,20,0) 70%); }
+.hero .panel-content { min-height: max(640px, 92vh); padding-bottom: clamp(56px, 9vh, 110px); }
+.hero h1 { max-width: 13ch; }
+.hero p.lead { color: #d2d5da; font-size: 1.15rem; max-width: 52ch; margin: 22px 0 34px; }
+.hero-meta { position: absolute; right: clamp(18px, 4vw, 48px); bottom: clamp(56px, 9vh, 110px); text-align: right; display: grid; gap: 6px; z-index: 2; }
+
+.feature { min-height: 620px; }
+.feature .panel-content { min-height: 620px; padding-top: 120px; padding-bottom: 90px; }
+.feature p.lead { color: #c9cdd3; max-width: 50ch; margin: 20px 0 32px; }
+.feature.right .panel-content { align-items: flex-end; text-align: right; }
+.feature.right p.lead { margin-left: auto; }
+
+/* Product: xarathi.ai */
+.product { background: linear-gradient(180deg, var(--bg), #0a1222 60%, var(--bg)); }
+.product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 88px); align-items: center; }
+.product-copy .lead { color: #c9cdd3; margin: 20px 0 32px; max-width: 52ch; }
+.feat { list-style: none; margin: 0 0 36px; padding: 0; border-top: 1px solid var(--line); }
+.feat li { display: grid; grid-template-columns: 48px 1fr; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.feat h3 { font-size: 1.05rem; }
+.feat p { color: var(--muted); font-size: 0.97rem; margin-top: 2px; }
+.feat .mono { color: var(--glow); padding-top: 3px; }
+.product-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.demo { border: 1px solid var(--line); border-radius: 14px; background: #0b1324; box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(74,168,255,0.08), 0 0 60px rgba(74,168,255,0.08); overflow: hidden; }
+.demo-bar { display: flex; align-items: center; gap: 7px; padding: 12px 16px; border-bottom: 1px solid var(--line); background: #0d1628; }
+.demo-bar span { width: 10px; height: 10px; border-radius: 50%; background: #2a3550; }
+.demo-bar p { margin-left: 10px; }
+.demo-body { padding: 22px; display: grid; gap: 16px; font-family: var(--font-body), "Noto Sans Devanagari", sans-serif; }
+.demo-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
+.lang button { background: none; border: 0; color: var(--muted); font: 500 0.85rem/1 var(--font-body), "Noto Sans Devanagari", sans-serif; padding: 7px 12px; border-radius: 999px; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--text); color: var(--bg); }
+.case { border: 1px solid var(--line); border-radius: 12px; padding: 20px; display: grid; gap: 18px; background: rgba(255,255,255,0.02); }
+.case-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.case-no { font-family: var(--font-display); font-weight: 600; letter-spacing: 0.08em; font-size: 1.1rem; }
+.case-court { color: var(--muted); font-size: 0.92rem; }
+.pill { font-size: 0.78rem; color: var(--glow); border: 1px solid rgba(74,168,255,0.4); border-radius: 999px; padding: 4px 10px; white-space: nowrap; }
+.next { display: grid; gap: 2px; }
+.next-date { font-family: var(--font-display); font-weight: 700; font-size: 2.2rem; letter-spacing: 0.04em; line-height: 1.1; }
+.count { color: var(--muted); font-size: 0.92rem; }
+.order { border-left: 2px solid var(--glow); padding-left: 14px; display: grid; gap: 6px; }
+.order p:last-child { color: #dfe4ea; }
+.remind { display: flex; align-items: center; gap: 10px; font-size: 0.92rem; color: #cfd6df; }
+.remind .dot { width: 8px; height: 8px; border-radius: 50%; background: #3ddc97; box-shadow: 0 0 10px #3ddc97; flex: none; }
+.demo-note { font-size: 0.8rem; color: var(--muted); }
+@media (max-width: 960px) { .product-grid { grid-template-columns: 1fr; } }
+
+/* Services list */
+section.block { padding: clamp(80px, 11vw, 140px) 0; border-bottom: 1px solid var(--line); }
+.head-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; margin-bottom: 56px; }
+.head-row p { color: var(--muted); max-width: 46ch; }
+.services { border-top: 1px solid var(--line); }
+.service {
+  display: grid; grid-template-columns: 90px 1fr 1.3fr; gap: 28px; align-items: baseline;
+  padding: 30px 0; border-bottom: 1px solid var(--line); transition: background .25s ease;
+}
+.service:hover { background: linear-gradient(90deg, rgba(255,255,255,0.04), transparent 70%); }
+.service .mono { color: var(--muted); }
+.service p { color: var(--muted); }
+.service .tags { display: block; margin-top: 10px; font-family: var(--font-mono); font-size: 0.74rem; color: #bfc3c9; letter-spacing: 0.06em; }
+
+/* Stats strip */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.stat { padding: 44px 28px; border-right: 1px solid var(--line); }
+.stat:last-child { border-right: 0; }
+.stat b { display: block; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.6rem, 5vw, 4rem); line-height: 1; font-variant-numeric: tabular-nums; }
+.stat span { display: block; margin-top: 10px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.82rem; color: var(--muted); font-weight: 600; }
+
+/* Mission timeline */
+.timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+.timeline::before { content: ""; position: absolute; left: 0; right: 0; top: 7px; height: 1px; background: var(--line); }
+.t-step { position: relative; padding: 36px 28px 0 0; }
+.t-step::before { content: ""; position: absolute; top: 0; left: 0; width: 15px; height: 15px; border: 2px solid var(--text); background: var(--bg); transform: rotate(45deg); }
+.t-step:last-child::before { background: var(--text); }
+.t-step .mono { display: block; margin-bottom: 10px; color: var(--glow); }
+.t-step p { color: var(--muted); margin-top: 10px; font-size: 0.98rem; }
+
+/* About */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 96px); }
+.about-grid .copy p { color: #c9cdd3; }
+.about-grid .copy p + p { margin-top: 18px; }
+.principles { border-top: 1px solid var(--line); }
+.principle { padding: 22px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1.4fr; gap: 20px; }
+.principle h3 { font-size: 1.05rem; }
+.principle p { color: var(--muted); font-size: 0.97rem; }
+
+/* Contact */
+.contact-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(40px, 6vw, 96px); }
+.contact-list { margin-top: 40px; border-top: 1px solid var(--line); }
+.contact-item { padding: 18px 0; border-bottom: 1px solid var(--line); display: grid; gap: 4px; }
+.contact-item .mono { text-transform: uppercase; }
+.contact-item a, .contact-item p { font-size: 1.1rem; }
+.contact-item a:hover { text-decoration: underline; }
+form#contactForm { display: grid; gap: 26px; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+label { display: block; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.78rem; font-weight: 600; color: var(--muted); margin-bottom: 8px; }
+input, select, textarea {
+  width: 100%; background: transparent; color: var(--text); border: 0; border-bottom: 1px solid rgba(255,255,255,0.35);
+  border-radius: 0; padding: 10px 0; font: inherit; font-size: 1.05rem;
+}
+select option { background: #0c1220; color: var(--text); }
+input:focus, select:focus, textarea:focus { outline: none; border-bottom-color: var(--text); }
+textarea { min-height: 120px; resize: vertical; }
+.form-note { font-size: 0.95rem; color: var(--muted); min-height: 1.5em; }
+.form-note.ok { color: var(--text); }
+
+footer.site { padding: 44px 0; }
+.foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; }
+.foot nav { display: flex; gap: 28px; flex-wrap: wrap; }
+.foot a, .foot p { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.8rem; font-weight: 600; color: var(--muted); }
+.foot a:hover { color: var(--text); }
+
+@media (max-width: 960px) {
+  .service { grid-template-columns: 60px 1fr; }
+  .service p { grid-column: 2; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .stat:nth-child(2) { border-right: 0; }
+  .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .timeline { grid-template-columns: repeat(2, 1fr); row-gap: 48px; }
+  .timeline::before { display: none; }
+  .about-grid, .contact-grid { grid-template-columns: 1fr; }
+  .hero-meta { display: none; }
+}
+@media (max-width: 820px) {
+  .menu-toggle { display: block; }
+  .nav-links {
+    position: fixed; inset: 0 0 0 auto; width: min(320px, 85vw); background: var(--bg); border-left: 1px solid var(--line);
+    flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 0; padding: 110px 32px 32px;
+    transform: translateX(100%); transition: transform .3s ease; z-index: 35;
+  }
+  .nav-links.open { transform: translateX(0); }
+  .nav-links a { width: 100%; padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .nav-links a::after { display: none; }
+}
+@media (max-width: 560px) {
+  .row2, .timeline, .principle { grid-template-columns: 1fr; }
+  .principle { gap: 6px; }
+  .stat { padding: 32px 18px; }
+  .service { grid-template-columns: 1fr; gap: 8px; }
+  .service p { grid-column: auto; }
+  .feature.right .panel-content { align-items: flex-start; text-align: left; }
+  .feature, .feature .panel-content { min-height: 900px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="lockup"><svg class="logo" role="img" aria-label="xWave40 LLP" xmlns="http://www.w3.org/2000/svg" viewBox="120 0 412 100"><path d="M156.552 71.0 142.216 52.912 128.272 71.0H124.912L140.48 50.784L125.248 31.799999999999997H128.776L142.608 49.048L142.664 49.104L156.16 31.799999999999997H159.464L144.232 51.064L160.136 71.0Z" fill="#4AA8FF" stroke="#4AA8FF" stroke-width="3.2" stroke-linejoin="round"></path><path d="M150.19 43.62 L151.00 42.59 L151.82 41.58 L152.63 40.59 L153.45 39.62 L154.26 38.67 L155.08 37.74 L155.89 36.82 L156.71 35.93 L157.53 35.04 L158.34 34.17 L159.16 33.32 L159.98 32.49 L160.80 31.67 L161.62 30.87 L162.44 30.09 L163.27 29.32 L164.10 28.57 L164.94 27.84 L165.77 27.12 L166.61 26.42 L167.45 25.73 L168.30 25.06 L169.15 24.40 L170.00 23.76 L170.86 23.14 L171.72 22.53 L172.58 21.93 L173.45 21.35 L174.33 20.78 L175.21 20.23 L176.09 19.69 L176.98 19.16 L177.88 18.65 L178.78 18.15 L179.69 17.67 L180.60 17.19 L181.52 16.74 L182.44 16.29 L183.37 15.86 L184.31 15.44 L185.25 15.03 L186.20 14.63 L187.16 14.25 L188.12 13.88 L189.10 13.52 L190.08 13.17 L191.06 12.84 L192.06 12.51 L193.06 12.20 L194.07 11.90 L195.09 11.60 L196.12 11.32 L197.16 11.06 L198.20 10.80 L199.26 10.55 L200.32 10.31 L201.39 10.08 L202.48 9.86 L203.57 9.66 L204.67 9.46 L205.78 9.27 L206.90 9.09 L208.03 8.92 L209.18 8.76 L210.33 8.61 L211.49 8.46 L212.66 8.33 L213.85 8.20 L215.04 8.09 L216.25 7.98 L217.47 7.88 L218.70 7.79 L219.94 7.70 L221.19 7.62 L222.45 7.55 L223.73 7.49 L225.02 7.44 L226.32 7.39 L227.63 7.35 L228.96 7.32 L230.29 7.29 L231.65 7.27 L233.01 7.25 L234.39 7.24 L235.78 7.24 L237.18 7.25 L238.60 7.26 L240.03 7.27 L241.48 7.29 L242.94 7.32 L244.41 7.35 L245.90 7.39 L247.40 7.43 L248.92 7.47 L250.45 7.52 L251.99 7.58 L253.56 7.64 L255.13 7.70 L256.72 7.77 L258.33 7.84 L259.95 7.91 L261.59 7.99 L263.25 8.07 L264.92 8.15 L266.61 8.24 L268.31 8.33 L270.03 8.43 L271.77 8.52 L273.52 8.62 L275.29 8.72 L277.08 8.82 L278.88 8.93 L280.70 9.03 L282.54 9.14 L284.40 9.25 L286.27 9.36 L288.17 9.47 L290.08 9.58 L292.01 9.70 L293.95 9.81 L295.92 9.93 L297.90 10.04 L299.91 10.16 L301.93 10.27 L303.97 10.39 L306.03 10.50 L308.11 10.62 L310.21 10.73 L312.33 10.85 L314.47 10.96 L316.63 11.07 L318.81 11.18 L321.01 11.29 L323.24 11.41 L325.48 11.53 L327.74 11.64 L330.02 11.76 L332.32 11.87 L334.65 11.98 L337.00 12.09 L337.00 11.91 L334.66 11.80 L332.33 11.69 L330.03 11.58 L327.75 11.46 L325.49 11.35 L323.24 11.23 L321.02 11.11 L318.83 10.97 L316.65 10.84 L314.49 10.70 L312.35 10.57 L310.23 10.43 L308.13 10.30 L306.05 10.16 L304.00 10.02 L301.96 9.88 L299.93 9.75 L297.93 9.61 L295.95 9.47 L293.98 9.33 L292.04 9.20 L290.11 9.06 L288.20 8.93 L286.31 8.80 L284.44 8.67 L282.58 8.54 L280.74 8.41 L278.92 8.28 L277.12 8.16 L275.33 8.03 L273.56 7.91 L271.81 7.79 L270.07 7.68 L268.35 7.56 L266.65 7.45 L264.97 7.34 L263.29 7.24 L261.64 7.14 L260.00 7.04 L258.38 6.95 L256.77 6.86 L255.18 6.77 L253.60 6.69 L252.04 6.61 L250.49 6.53 L248.95 6.46 L247.44 6.40 L245.93 6.34 L244.44 6.28 L242.96 6.23 L241.50 6.18 L240.05 6.14 L238.62 6.11 L237.20 6.08 L235.79 6.06 L234.39 6.04 L233.01 6.03 L231.64 6.02 L230.28 6.02 L228.94 6.03 L227.60 6.05 L226.28 6.07 L224.97 6.10 L223.68 6.13 L222.39 6.18 L221.12 6.23 L219.85 6.28 L218.60 6.35 L217.36 6.43 L216.13 6.51 L214.91 6.60 L213.71 6.70 L212.51 6.81 L211.32 6.92 L210.14 7.05 L208.97 7.18 L207.82 7.33 L206.67 7.48 L205.53 7.64 L204.40 7.82 L203.28 8.00 L202.16 8.19 L201.06 8.39 L199.97 8.61 L198.88 8.83 L197.80 9.07 L196.73 9.31 L195.67 9.57 L194.62 9.84 L193.57 10.12 L192.53 10.41 L191.50 10.71 L190.48 11.02 L189.46 11.35 L188.45 11.69 L187.45 12.04 L186.45 12.40 L185.46 12.78 L184.48 13.17 L183.50 13.57 L182.53 13.98 L181.57 14.41 L180.61 14.85 L179.66 15.31 L178.71 15.78 L177.77 16.26 L176.84 16.76 L175.90 17.27 L174.98 17.79 L174.06 18.33 L173.14 18.89 L172.23 19.46 L171.33 20.04 L170.42 20.64 L169.53 21.25 L168.63 21.88 L167.74 22.53 L166.86 23.19 L165.98 23.87 L165.10 24.56 L164.22 25.27 L163.35 25.99 L162.48 26.73 L161.62 27.49 L160.76 28.26 L159.90 29.05 L159.04 29.86 L158.19 30.69 L157.34 31.53 L156.49 32.39 L155.64 33.26 L154.80 34.16 L153.96 35.08 L153.13 36.01 L152.29 36.97 L151.46 37.94 L150.63 38.93 L149.80 39.94 L148.97 40.96 L148.15 42.00 Z" fill="#4AA8FF" stroke="#4AA8FF" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"></path><path d="M181.888 71.0 169.176 31.799999999999997H177.912L184.576 53.08Q184.96800000000002 54.312 185.332 55.684Q185.696 57.056 186.032 58.456Q186.088 58.903999999999996 186.2 59.352000000000004Q186.592 57.728 187.096 56.16Q187.544 54.592 188.16 53.08L194.43200000000002 37.455999999999996H201.488L207.648 53.024Q208.376 54.76 208.936 56.496Q209.328 57.84 209.664 59.072Q209.832 58.176 210.056 57.224000000000004Q210.28 56.272 210.58800000000002 55.18Q210.89600000000002 54.088 211.288 52.912L218.344 31.799999999999997H226.856L213.36 71.0H207.088L197.68 48.488L188.552 71.0ZM235.888 71.0 252.856 31.799999999999997H260.752L277.608 71.0H268.872L265.456 62.992H247.704L244.288 71.0ZM262.6 56.272 259.296 48.544Q258.848 47.536 258.372 46.248000000000005Q257.896 44.96 257.44800000000004 43.616Q257.056 42.495999999999995 256.664 41.488Q256.272 42.608000000000004 255.88 43.727999999999994Q255.376 45.016 254.872 46.248000000000005L253.864 48.712L250.616 56.272ZM303.216 71.0 286.64 31.799999999999997H295.544L304.168 52.855999999999995Q304.672 54.2 305.232 55.544Q305.79200000000003 56.888 306.352 58.316Q306.912 59.744 307.416 61.144Q307.416 61.2 307.416 61.2Q307.584 60.808 307.752 60.36Q308.368 58.568 309.096 56.72Q309.824 54.872 310.608 52.912L318.728 31.799999999999997H327.632L311.112 71.0ZM341.76 71.0V31.799999999999997H371.384V39.192H349.992V47.424H368.69599999999997V54.592H349.992V63.608H371.776V71.0ZM404.104 71.0V62.04H387.808L384.392 55.488L405.05600000000004 31.576H412.224V55.04H419.616V62.04H412.224V71.0ZM404.104 55.04V43.0L393.968 55.04ZM447.91200000000003 71.56Q442.36800000000005 71.56 438.504 69.096Q434.64000000000004 66.632 432.65200000000004 62.096000000000004Q430.66400000000004 57.56 430.66400000000004 51.4Q430.66400000000004 45.239999999999995 432.65200000000004 40.70399999999999Q434.64000000000004 36.168 438.504 33.704Q442.36800000000005 31.240000000000002 447.91200000000003 31.240000000000002Q453.40000000000003 31.240000000000002 457.208 33.704Q461.016 36.168 463.004 40.70399999999999Q464.992 45.239999999999995 464.992 51.4Q464.992 57.56 463.004 62.096000000000004Q461.016 66.632 457.208 69.096Q453.40000000000003 71.56 447.91200000000003 71.56ZM447.91200000000003 64.336Q452.22400000000005 64.336 454.576 60.976Q456.92800000000005 57.616 456.92800000000005 51.4Q456.92800000000005 45.072 454.576 41.656000000000006Q452.22400000000005 38.24 447.91200000000003 38.24Q443.48800000000006 38.24 441.08000000000004 41.656000000000006Q438.672 45.072 438.672 51.4Q438.672 57.616 441.08000000000004 60.976Q443.48800000000006 64.336 447.91200000000003 64.336Z" fill="#F5F5F5"></path><path d="M484.57500000000005 71.0V60.5H485.74500000000006V69.86H491.62500000000006V71.0ZM498.79 71.0V60.5H499.96000000000004V69.86H505.84000000000003V71.0ZM513.005 71.0V60.5H517.865Q518.735 60.5 519.4325 60.905Q520.13 61.31 520.5425 62.0225Q520.955 62.735 520.955 63.62Q520.955 64.565 520.5275 65.3075Q520.1 66.05 519.3875 66.485Q518.675 66.92 517.79 66.92H514.175V71.0ZM514.175 65.78H517.79Q518.33 65.78 518.7725 65.495Q519.215 65.21 519.47 64.7225Q519.725 64.235 519.725 63.605000000000004Q519.725 63.035 519.47 62.5925Q519.215 62.15 518.7725 61.894999999999996Q518.33 61.64 517.79 61.64H514.175Z" fill="#F5F5F5" stroke="#F5F5F5" stroke-width="0.5" transform="translate(476 71) scale(1.5) translate(-484.6 -71)"></path></svg><span class="tagline">AI-Powered Software</span></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu"><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#xarathi">xarathi.ai</a>
+      <a href="#mission">How we work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="panel hero">
+    <canvas class="bg" id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="shade"></div>
+    <div class="wrap panel-content">
+      <span class="kicker">E-Governance · AI · Compliance · Automation</span>
+      <h1>Engineering software for the next frontier</h1>
+      <p class="lead">xWave40 builds AI-powered software and digital platforms for governments and businesses: e-governance systems, AI solutions, compliance tools, automation and new products. One team takes you from first call to launch, then keeps it running.</p>
+      <div><a class="btn" href="#contact">Start a project</a></div>
+    </div>
+    <div class="hero-meta">
+      <span class="mono">XWAVE40.COM</span>
+      <span class="mono">PUNE · KOLHAPUR · USA</span>
+      <span class="mono">STATUS: ACCEPTING PROJECTS</span>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="block" id="services">
+    <div class="wrap">
+      <div class="head-row">
+        <div>
+          <span class="kicker">Capabilities</span>
+          <h2>What we build</h2>
+        </div>
+        <p>Choose one service or hand us the whole build. Every project starts with a fixed scope, a clear timeline and one point of contact.</p>
+      </div>
+      <div class="services">
+        <div class="service"><span class="mono">01</span><h3>E-Governance</h3><p>Digital platforms for government departments and public bodies: citizen service portals, online applications and approvals, grievance redressal, records digitisation and monitoring dashboards.<span class="tags">CITIZEN PORTALS / WORKFLOWS &amp; APPROVALS / DIGITAL RECORDS / DASHBOARDS</span></p></div>
+        <div class="service"><span class="mono">02</span><h3>Artificial Intelligence</h3><p>Practical AI built into the systems you already use: chatbots and virtual assistants, document reading and data extraction, predictive analytics and generative AI tools.<span class="tags">CHATBOTS / DOCUMENT AI / ANALYTICS / GENERATIVE AI</span></p></div>
+        <div class="service"><span class="mono">03</span><h3>Legal Compliance</h3><p>Technology and support to help organisations meet regulatory requirements: compliance tracking and alerts, data protection readiness under India's DPDP Act, audit trails and policy management.<span class="tags">COMPLIANCE TRACKING / DPDP READINESS / AUDIT TRAILS / POLICIES</span></p></div>
+        <div class="service"><span class="mono">04</span><h3>Product Development</h3><p>From idea to launch for web and mobile products: research, UX design, full-stack engineering, cloud deployment and ongoing improvement after release.<span class="tags">MVP / UI-UX / WEB &amp; MOBILE / CLOUD</span></p></div>
+        <div class="service"><span class="mono">05</span><h3>Automation</h3><p>Remove repetitive manual work with workflow automation, robotic process automation (RPA), system integrations and automatic reports.<span class="tags">RPA / WORKFLOWS / INTEGRATIONS / REPORTING</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT: xarathi.ai -->
+  <section class="block product" id="xarathi">
+    <div class="wrap product-grid">
+      <div class="product-copy">
+        <span class="kicker">Our product · xarathi.ai</span>
+        <h2>Seeing is believing</h2>
+        <p class="lead">xarathi.ai is one legal platform for your court cases. It is a free web platform that tracks cases using official eCourts records, so litigants, advocates and judges always know what happens next.</p>
+        <ul class="feat">
+          <li><span class="mono">01</span><div><h3>Next dates</h3><p>See the next hearing date for every case in one place.</p></div></li>
+          <li><span class="mono">02</span><div><h3>Orders explained</h3><p>Court orders rewritten in plain language anyone can follow.</p></div></li>
+          <li><span class="mono">03</span><div><h3>Reminders &amp; updates</h3><p>Get notified before a hearing and when a case changes.</p></div></li>
+          <li><span class="mono">04</span><div><h3>Your language</h3><p>Available in English, मराठी and हिंदी.</p></div></li>
+        </ul>
+        <div class="product-actions">
+          <a class="btn" href="https://xarathi.ai" target="_blank" rel="noopener">Try xarathi.ai free</a>
+          <span class="mono">Built on official eCourts records</span>
+        </div>
+      </div>
+
+      <div class="demo" aria-label="Interactive preview of xarathi.ai">
+        <div class="demo-bar"><span></span><span></span><span></span><p class="mono">xarathi.ai</p></div>
+        <div class="demo-body">
+          <div class="demo-top">
+            <p class="mono" id="dmLabel">MY CASES</p>
+            <div class="lang" role="group" aria-label="Choose language">
+              <button type="button" data-lang="en" aria-pressed="true">EN</button>
+              <button type="button" data-lang="mr" aria-pressed="false">मराठी</button>
+              <button type="button" data-lang="hi" aria-pressed="false">हिंदी</button>
+            </div>
+          </div>
+          <div class="case">
+            <div class="case-head">
+              <div><p class="case-no">CS / 1234 / 2025</p><p class="case-court" id="dmCourt">Civil Court, Pune</p></div>
+              <span class="pill" id="dmStatus">Hearing scheduled</span>
+            </div>
+            <div class="next">
+              <p class="mono" id="dmNextLbl">NEXT DATE</p>
+              <p class="next-date">12 DEC 2026</p>
+              <p class="count" id="dmCount">in 23 days</p>
+            </div>
+            <div class="order">
+              <p class="mono" id="dmOrderLbl">ORDER EXPLAINED</p>
+              <p id="dmOrder">The court has asked both parties to submit their documents before the next hearing.</p>
+            </div>
+            <div class="remind"><span class="dot"></span><p id="dmRemind">Reminder set: 1 day before the hearing</p></div>
+          </div>
+          <p class="demo-note">Sample case for illustration. Tap a language to see it switch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE PANEL -->
+  <section class="panel feature right">
+    <canvas class="bg" id="orbitCanvas" aria-hidden="true"></canvas>
+    <div class="shade"></div>
+    <div class="wrap panel-content">
+      <span class="kicker">One connected platform</span>
+      <h2>We connect<br>the dots</h2>
+      <p class="lead">E-governance, AI, compliance, product development and automation work as one system, built by one team. Data moves securely between them, with audit trails and data protection designed in from day one, so it grows from a pilot to a full rollout without a rebuild.</p>
+      <div><a class="btn" href="#mission">How we work</a></div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section aria-label="At a glance">
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat"><b>05</b><span>Core services</span></div>
+        <div class="stat"><b>04</b><span>Step delivery process</span></div>
+        <div class="stat"><b>01</b><span>Point of contact</span></div>
+        <div class="stat"><b>100%</b><span>Code ownership to you</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION TIMELINE -->
+  <section class="block" id="mission">
+    <div class="wrap">
+      <div class="head-row">
+        <div>
+          <span class="kicker">Mission profile</span>
+          <h2>From idea to launch</h2>
+        </div>
+        <p>A clear sequence with a working preview at every stage. You always know what's done, what's next and when it ships.</p>
+      </div>
+      <div class="timeline">
+        <div class="t-step"><span class="mono">T-03 · DISCOVER</span><h3>Plan the mission</h3><p>We learn your goals and users, then agree on scope, budget and timeline in writing.</p></div>
+        <div class="t-step"><span class="mono">T-02 · DESIGN</span><h3>Design the craft</h3><p>Wireframes and visual designs you review and change before any code is written.</p></div>
+        <div class="t-step"><span class="mono">T-01 · BUILD</span><h3>Build &amp; test</h3><p>Development in short cycles with a live preview you can try along the way.</p></div>
+        <div class="t-step"><span class="mono">T-00 · LAUNCH</span><h3>Liftoff &amp; support</h3><p>We deploy, train your team and keep everything updated and secure.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="block" id="about">
+    <div class="wrap about-grid">
+      <div class="copy">
+        <span class="kicker">About xWave40</span>
+        <h2 style="margin-bottom:28px">A small team with a big trajectory</h2>
+        <p>xWave40 LLP is an AI-powered software firm working with government departments, public bodies and businesses. We focus on e-governance, artificial intelligence, legal compliance, product development and automation.</p>
+        <p>Our team is small and senior, so the people you meet on day one are the people who build your product. We explain things in plain language, show progress every week and hand over full ownership of your code and data.</p>
+      </div>
+      <div class="principles">
+        <div class="principle"><h3>Clear pricing</h3><p>A written scope and quote before work starts. No hidden costs.</p></div>
+        <div class="principle"><h3>Weekly progress</h3><p>Working software every week, not just at the end.</p></div>
+        <div class="principle"><h3>You own it all</h3><p>Source code, designs, domains and accounts are handed over in your name.</p></div>
+        <div class="principle"><h3>Here after launch</h3><p>Fixes, updates and new features whenever you need them.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="block" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <span class="kicker">Contact</span>
+        <h2>Launch your project</h2>
+        <p style="color:var(--muted);margin-top:18px">Tell us what you're building. We reply within one business day.</p>
+        <div class="contact-list">
+          <div class="contact-item"><span class="mono">Email</span><a href="mailto:amit@xwave40.com">amit@xwave40.com</a></div>
+          <div class="contact-item"><span class="mono">Phone</span><a href="tel:+919028508787">+91 90285 08787</a></div>
+          <div class="contact-item"><span class="mono">Offices</span><p>Pune · Kolhapur, India &nbsp;|&nbsp; USA</p></div>
+        </div>
+      </div>
+      <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="company_website">
+        <input type="hidden" name="form-name" value="contact">
+        <p hidden><label for="hp">Leave this empty</label><input id="hp" name="company_website"></p>
+        <div class="row2">
+          <div><label for="name">Name</label><input id="name" name="name" required autocomplete="name"></div>
+          <div><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+        </div>
+        <div class="row2">
+          <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div>
+            <label for="service">Service</label>
+            <select id="service" name="service">
+              <option>E-Governance</option>
+              <option>Artificial Intelligence</option>
+              <option>Legal Compliance</option>
+              <option>Product Development</option>
+              <option>Automation</option>
+              <option>Something else</option>
+            </select>
+          </div>
+        </div>
+        <div><label for="message">Project details</label><textarea id="message" name="message" required placeholder="What would you like to build? Any timeline or budget in mind?"></textarea></div>
+        <div><button class="btn" type="submit">Send message</button></div>
+        <p class="form-note" id="formNote" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot">
+    <div class="foot-brand"><span class="lockup"><svg class="logo logo-foot" role="img" aria-label="xWave40 LLP" xmlns="http://www.w3.org/2000/svg" viewBox="120 0 412 100"><path d="M156.552 71.0 142.216 52.912 128.272 71.0H124.912L140.48 50.784L125.248 31.799999999999997H128.776L142.608 49.048L142.664 49.104L156.16 31.799999999999997H159.464L144.232 51.064L160.136 71.0Z" fill="#4AA8FF" stroke="#4AA8FF" stroke-width="3.2" stroke-linejoin="round"></path><path d="M150.19 43.62 L151.00 42.59 L151.82 41.58 L152.63 40.59 L153.45 39.62 L154.26 38.67 L155.08 37.74 L155.89 36.82 L156.71 35.93 L157.53 35.04 L158.34 34.17 L159.16 33.32 L159.98 32.49 L160.80 31.67 L161.62 30.87 L162.44 30.09 L163.27 29.32 L164.10 28.57 L164.94 27.84 L165.77 27.12 L166.61 26.42 L167.45 25.73 L168.30 25.06 L169.15 24.40 L170.00 23.76 L170.86 23.14 L171.72 22.53 L172.58 21.93 L173.45 21.35 L174.33 20.78 L175.21 20.23 L176.09 19.69 L176.98 19.16 L177.88 18.65 L178.78 18.15 L179.69 17.67 L180.60 17.19 L181.52 16.74 L182.44 16.29 L183.37 15.86 L184.31 15.44 L185.25 15.03 L186.20 14.63 L187.16 14.25 L188.12 13.88 L189.10 13.52 L190.08 13.17 L191.06 12.84 L192.06 12.51 L193.06 12.20 L194.07 11.90 L195.09 11.60 L196.12 11.32 L197.16 11.06 L198.20 10.80 L199.26 10.55 L200.32 10.31 L201.39 10.08 L202.48 9.86 L203.57 9.66 L204.67 9.46 L205.78 9.27 L206.90 9.09 L208.03 8.92 L209.18 8.76 L210.33 8.61 L211.49 8.46 L212.66 8.33 L213.85 8.20 L215.04 8.09 L216.25 7.98 L217.47 7.88 L218.70 7.79 L219.94 7.70 L221.19 7.62 L222.45 7.55 L223.73 7.49 L225.02 7.44 L226.32 7.39 L227.63 7.35 L228.96 7.32 L230.29 7.29 L231.65 7.27 L233.01 7.25 L234.39 7.24 L235.78 7.24 L237.18 7.25 L238.60 7.26 L240.03 7.27 L241.48 7.29 L242.94 7.32 L244.41 7.35 L245.90 7.39 L247.40 7.43 L248.92 7.47 L250.45 7.52 L251.99 7.58 L253.56 7.64 L255.13 7.70 L256.72 7.77 L258.33 7.84 L259.95 7.91 L261.59 7.99 L263.25 8.07 L264.92 8.15 L266.61 8.24 L268.31 8.33 L270.03 8.43 L271.77 8.52 L273.52 8.62 L275.29 8.72 L277.08 8.82 L278.88 8.93 L280.70 9.03 L282.54 9.14 L284.40 9.25 L286.27 9.36 L288.17 9.47 L290.08 9.58 L292.01 9.70 L293.95 9.81 L295.92 9.93 L297.90 10.04 L299.91 10.16 L301.93 10.27 L303.97 10.39 L306.03 10.50 L308.11 10.62 L310.21 10.73 L312.33 10.85 L314.47 10.96 L316.63 11.07 L318.81 11.18 L321.01 11.29 L323.24 11.41 L325.48 11.53 L327.74 11.64 L330.02 11.76 L332.32 11.87 L334.65 11.98 L337.00 12.09 L337.00 11.91 L334.66 11.80 L332.33 11.69 L330.03 11.58 L327.75 11.46 L325.49 11.35 L323.24 11.23 L321.02 11.11 L318.83 10.97 L316.65 10.84 L314.49 10.70 L312.35 10.57 L310.23 10.43 L308.13 10.30 L306.05 10.16 L304.00 10.02 L301.96 9.88 L299.93 9.75 L297.93 9.61 L295.95 9.47 L293.98 9.33 L292.04 9.20 L290.11 9.06 L288.20 8.93 L286.31 8.80 L284.44 8.67 L282.58 8.54 L280.74 8.41 L278.92 8.28 L277.12 8.16 L275.33 8.03 L273.56 7.91 L271.81 7.79 L270.07 7.68 L268.35 7.56 L266.65 7.45 L264.97 7.34 L263.29 7.24 L261.64 7.14 L260.00 7.04 L258.38 6.95 L256.77 6.86 L255.18 6.77 L253.60 6.69 L252.04 6.61 L250.49 6.53 L248.95 6.46 L247.44 6.40 L245.93 6.34 L244.44 6.28 L242.96 6.23 L241.50 6.18 L240.05 6.14 L238.62 6.11 L237.20 6.08 L235.79 6.06 L234.39 6.04 L233.01 6.03 L231.64 6.02 L230.28 6.02 L228.94 6.03 L227.60 6.05 L226.28 6.07 L224.97 6.10 L223.68 6.13 L222.39 6.18 L221.12 6.23 L219.85 6.28 L218.60 6.35 L217.36 6.43 L216.13 6.51 L214.91 6.60 L213.71 6.70 L212.51 6.81 L211.32 6.92 L210.14 7.05 L208.97 7.18 L207.82 7.33 L206.67 7.48 L205.53 7.64 L204.40 7.82 L203.28 8.00 L202.16 8.19 L201.06 8.39 L199.97 8.61 L198.88 8.83 L197.80 9.07 L196.73 9.31 L195.67 9.57 L194.62 9.84 L193.57 10.12 L192.53 10.41 L191.50 10.71 L190.48 11.02 L189.46 11.35 L188.45 11.69 L187.45 12.04 L186.45 12.40 L185.46 12.78 L184.48 13.17 L183.50 13.57 L182.53 13.98 L181.57 14.41 L180.61 14.85 L179.66 15.31 L178.71 15.78 L177.77 16.26 L176.84 16.76 L175.90 17.27 L174.98 17.79 L174.06 18.33 L173.14 18.89 L172.23 19.46 L171.33 20.04 L170.42 20.64 L169.53 21.25 L168.63 21.88 L167.74 22.53 L166.86 23.19 L165.98 23.87 L165.10 24.56 L164.22 25.27 L163.35 25.99 L162.48 26.73 L161.62 27.49 L160.76 28.26 L159.90 29.05 L159.04 29.86 L158.19 30.69 L157.34 31.53 L156.49 32.39 L155.64 33.26 L154.80 34.16 L153.96 35.08 L153.13 36.01 L152.29 36.97 L151.46 37.94 L150.63 38.93 L149.80 39.94 L148.97 40.96 L148.15 42.00 Z" fill="#4AA8FF" stroke="#4AA8FF" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"></path><path d="M181.888 71.0 169.176 31.799999999999997H177.912L184.576 53.08Q184.96800000000002 54.312 185.332 55.684Q185.696 57.056 186.032 58.456Q186.088 58.903999999999996 186.2 59.352000000000004Q186.592 57.728 187.096 56.16Q187.544 54.592 188.16 53.08L194.43200000000002 37.455999999999996H201.488L207.648 53.024Q208.376 54.76 208.936 56.496Q209.328 57.84 209.664 59.072Q209.832 58.176 210.056 57.224000000000004Q210.28 56.272 210.58800000000002 55.18Q210.89600000000002 54.088 211.288 52.912L218.344 31.799999999999997H226.856L213.36 71.0H207.088L197.68 48.488L188.552 71.0ZM235.888 71.0 252.856 31.799999999999997H260.752L277.608 71.0H268.872L265.456 62.992H247.704L244.288 71.0ZM262.6 56.272 259.296 48.544Q258.848 47.536 258.372 46.248000000000005Q257.896 44.96 257.44800000000004 43.616Q257.056 42.495999999999995 256.664 41.488Q256.272 42.608000000000004 255.88 43.727999999999994Q255.376 45.016 254.872 46.248000000000005L253.864 48.712L250.616 56.272ZM303.216 71.0 286.64 31.799999999999997H295.544L304.168 52.855999999999995Q304.672 54.2 305.232 55.544Q305.79200000000003 56.888 306.352 58.316Q306.912 59.744 307.416 61.144Q307.416 61.2 307.416 61.2Q307.584 60.808 307.752 60.36Q308.368 58.568 309.096 56.72Q309.824 54.872 310.608 52.912L318.728 31.799999999999997H327.632L311.112 71.0ZM341.76 71.0V31.799999999999997H371.384V39.192H349.992V47.424H368.69599999999997V54.592H349.992V63.608H371.776V71.0ZM404.104 71.0V62.04H387.808L384.392 55.488L405.05600000000004 31.576H412.224V55.04H419.616V62.04H412.224V71.0ZM404.104 55.04V43.0L393.968 55.04ZM447.91200000000003 71.56Q442.36800000000005 71.56 438.504 69.096Q434.64000000000004 66.632 432.65200000000004 62.096000000000004Q430.66400000000004 57.56 430.66400000000004 51.4Q430.66400000000004 45.239999999999995 432.65200000000004 40.70399999999999Q434.64000000000004 36.168 438.504 33.704Q442.36800000000005 31.240000000000002 447.91200000000003 31.240000000000002Q453.40000000000003 31.240000000000002 457.208 33.704Q461.016 36.168 463.004 40.70399999999999Q464.992 45.239999999999995 464.992 51.4Q464.992 57.56 463.004 62.096000000000004Q461.016 66.632 457.208 69.096Q453.40000000000003 71.56 447.91200000000003 71.56ZM447.91200000000003 64.336Q452.22400000000005 64.336 454.576 60.976Q456.92800000000005 57.616 456.92800000000005 51.4Q456.92800000000005 45.072 454.576 41.656000000000006Q452.22400000000005 38.24 447.91200000000003 38.24Q443.48800000000006 38.24 441.08000000000004 41.656000000000006Q438.672 45.072 438.672 51.4Q438.672 57.616 441.08000000000004 60.976Q443.48800000000006 64.336 447.91200000000003 64.336Z" fill="#F5F5F5"></path><path d="M484.57500000000005 71.0V60.5H485.74500000000006V69.86H491.62500000000006V71.0ZM498.79 71.0V60.5H499.96000000000004V69.86H505.84000000000003V71.0ZM513.005 71.0V60.5H517.865Q518.735 60.5 519.4325 60.905Q520.13 61.31 520.5425 62.0225Q520.955 62.735 520.955 63.62Q520.955 64.565 520.5275 65.3075Q520.1 66.05 519.3875 66.485Q518.675 66.92 517.79 66.92H514.175V71.0ZM514.175 65.78H517.79Q518.33 65.78 518.7725 65.495Q519.215 65.21 519.47 64.7225Q519.725 64.235 519.725 63.605000000000004Q519.725 63.035 519.47 62.5925Q519.215 62.15 518.7725 61.894999999999996Q518.33 61.64 517.79 61.64H514.175Z" fill="#F5F5F5" stroke="#F5F5F5" stroke-width="0.5" transform="translate(476 71) scale(1.5) translate(-484.6 -71)"></path></svg><span class="tagline">AI-Powered Software</span></span><p>LLPIN: ACR-9336 · Pune · Kolhapur · USA</p><p>&copy; <span id="year">2026</span> xwave40 LLP</p></div>
+    <nav aria-label="Footer">
+      <a href="#services">Services</a>
+      <a href="#xarathi">xarathi.ai</a>
+      <a href="#mission">How we work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Mobile menu
+  var toggle = document.getElementById('menuToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  links.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { links.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+  });
+
+  // xarathi.ai demo: language switch
+  var L = {
+    en: { label: 'MY CASES', court: 'Civil Court, Pune', status: 'Hearing scheduled', next: 'NEXT DATE', count: 'in 23 days', orderLbl: 'ORDER EXPLAINED', order: 'The court has asked both parties to submit their documents before the next hearing.', remind: 'Reminder set: 1 day before the hearing' },
+    mr: { label: 'माझे खटले', court: 'दिवाणी न्यायालय, पुणे', status: 'सुनावणी निश्चित', next: 'पुढील तारीख', count: '२३ दिवसांनी', orderLbl: 'आदेशाचा सोपा अर्थ', order: 'न्यायालयाने दोन्ही पक्षांना पुढील सुनावणीपूर्वी त्यांची कागदपत्रे सादर करण्यास सांगितले आहे.', remind: 'स्मरणपत्र: सुनावणीच्या एक दिवस आधी' },
+    hi: { label: 'मेरे केस', court: 'सिविल कोर्ट, पुणे', status: 'सुनवाई तय', next: 'अगली तारीख', count: '23 दिन बाद', orderLbl: 'आदेश का सरल अर्थ', order: 'अदालत ने दोनों पक्षों को अगली सुनवाई से पहले अपने दस्तावेज़ जमा करने को कहा है।', remind: 'रिमाइंडर: सुनवाई से एक दिन पहले' }
+  };
+  var ids = { label: 'dmLabel', court: 'dmCourt', status: 'dmStatus', next: 'dmNextLbl', count: 'dmCount', orderLbl: 'dmOrderLbl', order: 'dmOrder', remind: 'dmRemind' };
+  var langBtns = document.querySelectorAll('.lang button');
+  langBtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = L[b.getAttribute('data-lang')];
+      Object.keys(ids).forEach(function (k) { document.getElementById(ids[k]).textContent = t[k]; });
+      langBtns.forEach(function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
+    });
+  });
+
+  // Contact form: posts to Netlify Forms when live; shows a note in preview.
+  var form = document.getElementById('contactForm');
+  var note = document.getElementById('formNote');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var live = /xwave40\.com$|netlify\.app$/.test(location.hostname);
+    if (!live) {
+      note.className = 'form-note';
+      note.textContent = 'Preview only: the form starts working once the site is live on xwave40.com.';
+      return;
+    }
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() })
+      .then(function (r) {
+        if (!r.ok) throw new Error();
+        form.reset();
+        note.className = 'form-note ok';
+        note.textContent = 'Message received. We will reply within one business day.';
+      })
+      .catch(function () {
+        note.className = 'form-note';
+        note.textContent = 'The message could not be sent. Please email amit@xwave40.com instead.';
+      });
+  });
+
+  function setup(canvas) {
+    var ctx = canvas.getContext('2d');
+    var s = { ctx: ctx, w: 0, h: 0 };
+    function size() {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      s.w = canvas.clientWidth; s.h = canvas.clientHeight;
+      canvas.width = s.w * dpr; canvas.height = s.h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    size();
+    window.addEventListener('resize', size);
+    return s;
+  }
+  function makeStars(n) {
+    var a = [];
+    for (var i = 0; i < n; i++) a.push({ x: Math.random(), y: Math.random(), r: Math.random() * 1.2 + 0.2, p: Math.random() * 6.28, sp: 0.5 + Math.random() * 1.5 });
+    return a;
+  }
+  function drawStars(s, stars, t, maxY) {
+    var c = s.ctx;
+    stars.forEach(function (st) {
+      if (st.y > maxY) return;
+      var a = 0.35 + 0.65 * (reduce ? 0.7 : (0.5 + 0.5 * Math.sin(t * st.sp + st.p)));
+      c.fillStyle = 'rgba(255,255,255,' + a.toFixed(2) + ')';
+      c.beginPath(); c.arc(st.x * s.w, st.y * s.h, st.r, 0, 6.283); c.fill();
+    });
+  }
+
+  // Drifting network of dots that link up when close (and to the cursor).
+  function Network(state, opts) {
+    this.s = state; this.o = opts; this.pts = []; this.mouse = null; this.seed();
+  }
+  Network.prototype.seed = function () {
+    var w = this.s.w, h = this.s.h * this.o.hFrac;
+    var n = Math.round(Math.min(this.o.max, (w * h) / this.o.density));
+    this.pts = [];
+    for (var i = 0; i < n; i++) {
+      this.pts.push({ x: Math.random() * w, y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.35, vy: (Math.random() - 0.5) * 0.35, r: Math.random() * 1.3 + 0.8 });
+    }
+  };
+  Network.prototype.draw = function () {
+    var c = this.s.ctx, w = this.s.w, h = this.s.h * this.o.hFrac, P = this.pts, m = this.mouse;
+    var link = w < 700 ? this.o.link * 0.75 : this.o.link, L2 = link * link;
+    for (var i = 0; i < P.length; i++) {
+      var p = P[i];
+      if (!reduce) {
+        p.x += p.vx; p.y += p.vy;
+        if (m) {
+          var mx = p.x - m.x, my = p.y - m.y, md = mx * mx + my * my;
+          if (md < 22000 && md > 1) { var f = 0.6 / Math.sqrt(md); p.x += mx * f; p.y += my * f; }
+        }
+        if (p.x < -20) p.x = w + 20; else if (p.x > w + 20) p.x = -20;
+        if (p.y < -20) p.y = h + 20; else if (p.y > h + 20) p.y = -20;
+      }
+    }
+    c.lineWidth = 1;
+    for (var i = 0; i < P.length; i++) {
+      for (var j = i + 1; j < P.length; j++) {
+        var dx = P[i].x - P[j].x, dy = P[i].y - P[j].y, d2 = dx * dx + dy * dy;
+        if (d2 < L2) {
+          c.strokeStyle = 'rgba(150,200,255,' + ((1 - d2 / L2) * this.o.alpha).toFixed(3) + ')';
+          c.beginPath(); c.moveTo(P[i].x, P[i].y); c.lineTo(P[j].x, P[j].y); c.stroke();
+        }
+      }
+      if (m) {
+        var ex = P[i].x - m.x, ey = P[i].y - m.y, e2 = ex * ex + ey * ey, M2 = 190 * 190;
+        if (e2 < M2) {
+          c.strokeStyle = 'rgba(255,255,255,' + ((1 - e2 / M2) * 0.7).toFixed(3) + ')';
+          c.beginPath(); c.moveTo(P[i].x, P[i].y); c.lineTo(m.x, m.y); c.stroke();
+        }
+      }
+    }
+    for (var i = 0; i < P.length; i++) {
+      c.fillStyle = 'rgba(255,255,255,0.85)';
+      c.beginPath(); c.arc(P[i].x, P[i].y, P[i].r, 0, 6.283); c.fill();
+    }
+    if (m) {
+      c.fillStyle = '#fff'; c.beginPath(); c.arc(m.x, m.y, 2.5, 0, 6.283); c.fill();
+    }
+  };
+  function trackMouse(section, canvas, net) {
+    section.addEventListener('pointermove', function (e) {
+      if (e.pointerType === 'touch') return;
+      var r = canvas.getBoundingClientRect();
+      net.mouse = { x: e.clientX - r.left, y: e.clientY - r.top };
+    });
+    section.addEventListener('pointerleave', function () { net.mouse = null; });
+  }
+
+  // HERO: network above a planet limb, with a wave-shaped trajectory climbing off it.
+  var heroCanvas = document.getElementById('heroCanvas');
+  var hero = setup(heroCanvas);
+  var heroStars = makeStars(140);
+  var heroNet = new Network(hero, { max: 120, density: 9500, link: 140, alpha: 0.45, hFrac: 0.85 });
+  trackMouse(heroCanvas.parentNode, heroCanvas, heroNet);
+  window.addEventListener('resize', function () { heroNet.seed(); });
+  function drawHero(t) {
+    var c = hero.ctx, w = hero.w, h = hero.h;
+    c.fillStyle = '#070b14'; c.fillRect(0, 0, w, h);
+    drawStars(hero, heroStars, t, 0.8);
+    heroNet.draw();
+    var R = Math.max(w * 1.15, 1300);
+    var cx = w * 0.5, cy = h + R - h * 0.24;
+    var g = c.createRadialGradient(cx, cy, R * 0.97, cx, cy, R * 1.07);
+    g.addColorStop(0, 'rgba(74,168,255,0.85)');
+    g.addColorStop(0.3, 'rgba(74,168,255,0.3)');
+    g.addColorStop(1, 'rgba(74,168,255,0)');
+    c.fillStyle = g; c.beginPath(); c.arc(cx, cy, R * 1.07, 0, 6.283); c.fill();
+    var pg = c.createRadialGradient(cx, cy - R, R * 0.05, cx, cy, R);
+    pg.addColorStop(0, '#0d2340'); pg.addColorStop(0.5, '#050c18'); pg.addColorStop(1, '#02050a');
+    c.fillStyle = pg; c.beginPath(); c.arc(cx, cy, R, 0, 6.283); c.fill();
+    var lg = c.createLinearGradient(0, 0, w, 0);
+    lg.addColorStop(0, 'rgba(160,210,255,0.15)'); lg.addColorStop(0.5, 'rgba(200,230,255,1)'); lg.addColorStop(1, 'rgba(160,210,255,0.15)');
+    c.strokeStyle = lg; c.lineWidth = 2.2;
+    c.beginPath(); c.arc(cx, cy, R, Math.PI * 1.02, Math.PI * 1.98); c.stroke();
+    var prog = reduce ? 1 : Math.min(1, ((t % 9) / 6));
+    c.save();
+    c.strokeStyle = 'rgba(255,255,255,0.85)'; c.lineWidth = 1.5; c.setLineDash([2, 6]);
+    c.beginPath();
+    var x0 = w * 0.1, x1 = w * 0.95, steps = 160, last = null;
+    for (var i = 0; i <= steps * prog; i++) {
+      var f = i / steps;
+      var x = x0 + (x1 - x0) * f;
+      var y = h * 0.72 - Math.pow(f, 1.6) * h * 0.52 + Math.sin(f * 14) * 10 * (1 - f);
+      if (i === 0) c.moveTo(x, y); else c.lineTo(x, y);
+      last = [x, y];
+    }
+    c.stroke(); c.restore();
+    if (last) {
+      c.fillStyle = '#fff'; c.beginPath(); c.arc(last[0], last[1], 3, 0, 6.283); c.fill();
+      c.strokeStyle = 'rgba(255,255,255,0.3)'; c.beginPath(); c.arc(last[0], last[1], 9, 0, 6.283); c.stroke();
+    }
+  }
+
+  // FEATURE: the five services connected to xwave40 at the centre, with data pulses on each link.
+  var orbitCanvas = document.getElementById('orbitCanvas');
+  var orbit = setup(orbitCanvas);
+  var orbitStars = makeStars(120);
+  var orbitNet = new Network(orbit, { max: 70, density: 14000, link: 120, alpha: 0.22, hFrac: 1 });
+  trackMouse(orbitCanvas.parentNode, orbitCanvas, orbitNet);
+  window.addEventListener('resize', function () { orbitNet.seed(); });
+  var SERVICES = ['E-Governance', 'Artificial Intelligence', 'Legal Compliance', 'Product Development', 'Automation'];
+  var SHORT = ['E-Governance', 'AI', 'Compliance', 'Product', 'Automation'];
+  var sats = SERVICES.map(function () {
+    var a = []; for (var k = 0; k < 3; k++) a.push({ a: Math.random() * 6.283, d: 34 + Math.random() * 26, sp: 0.2 + Math.random() * 0.4 });
+    return a;
+  });
+  function label(c, text, x, y, align, size, color) {
+    c.font = '600 ' + size + 'px "Barlow Semi Condensed", "Arial Narrow", sans-serif';
+    if ('letterSpacing' in c) c.letterSpacing = '2px';
+    c.textAlign = align; c.textBaseline = 'middle'; c.fillStyle = color;
+    c.fillText(text.toUpperCase(), x, y);
+    if ('letterSpacing' in c) c.letterSpacing = '0px';
+  }
+  function drawOrbit(t) {
+    var c = orbit.ctx, w = orbit.w, h = orbit.h;
+    c.fillStyle = '#070b14'; c.fillRect(0, 0, w, h);
+    drawStars(orbit, orbitStars, t, 1);
+    orbitNet.draw();
+    var narrow = w < 760;
+    var R = narrow ? Math.min(w * 0.23, h * 0.14) : Math.min(w * 0.15, h * 0.3);
+    var cx = narrow ? w * 0.5 : Math.max(w * 0.27, R * 0.95 + 230), cy = narrow ? h * 0.25 : h * 0.47;
+    var nodes = SERVICES.map(function (_, i) {
+      var ang = -Math.PI / 2 + i * (6.283 / SERVICES.length);
+      var wob = reduce ? 0 : 1;
+      return { x: cx + Math.cos(ang) * R + Math.sin(t * 0.7 + i * 1.7) * 5 * wob, y: cy + Math.sin(ang) * R + Math.cos(t * 0.6 + i * 2.3) * 5 * wob, ang: ang };
+    });
+    // glow behind hub
+    var core = c.createRadialGradient(cx, cy, 0, cx, cy, R * 0.9);
+    core.addColorStop(0, 'rgba(74,168,255,0.28)'); core.addColorStop(1, 'rgba(74,168,255,0)');
+    c.fillStyle = core; c.beginPath(); c.arc(cx, cy, R * 0.9, 0, 6.283); c.fill();
+    // ring links between neighbouring services and across
+    c.lineWidth = 1;
+    for (var i = 0; i < nodes.length; i++) {
+      var a = nodes[i], b = nodes[(i + 1) % nodes.length], d = nodes[(i + 2) % nodes.length];
+      c.strokeStyle = 'rgba(255,255,255,0.22)';
+      c.beginPath(); c.moveTo(a.x, a.y); c.lineTo(b.x, b.y); c.stroke();
+      c.strokeStyle = 'rgba(255,255,255,0.08)';
+      c.beginPath(); c.moveTo(a.x, a.y); c.lineTo(d.x, d.y); c.stroke();
+    }
+    // spokes with travelling pulses
+    nodes.forEach(function (n, i) {
+      c.strokeStyle = 'rgba(150,200,255,0.5)';
+      c.beginPath(); c.moveTo(cx, cy); c.lineTo(n.x, n.y); c.stroke();
+      for (var k = 0; k < 2; k++) {
+        var f = reduce ? 0.5 : ((t * 0.35 + i * 0.21 + k * 0.5) % 1);
+        if (k === 1) f = 1 - f;
+        var px = cx + (n.x - cx) * f, py = cy + (n.y - cy) * f;
+        c.fillStyle = k ? 'rgba(255,138,92,0.95)' : 'rgba(255,255,255,0.95)';
+        c.beginPath(); c.arc(px, py, 2.2, 0, 6.283); c.fill();
+      }
+      // small satellite dots around each service
+      sats[i].forEach(function (s) {
+        var aa = s.a + (reduce ? 0 : t * s.sp), sx = n.x + Math.cos(aa) * s.d * (narrow ? 0.7 : 1), sy = n.y + Math.sin(aa) * s.d * (narrow ? 0.7 : 1);
+        c.strokeStyle = 'rgba(255,255,255,0.18)';
+        c.beginPath(); c.moveTo(n.x, n.y); c.lineTo(sx, sy); c.stroke();
+        c.fillStyle = 'rgba(255,255,255,0.6)';
+        c.beginPath(); c.arc(sx, sy, 1.4, 0, 6.283); c.fill();
+      });
+      // node
+      c.fillStyle = '#070b14'; c.strokeStyle = '#fff'; c.lineWidth = 1.5;
+      c.beginPath(); c.arc(n.x, n.y, 7, 0, 6.283); c.fill(); c.stroke();
+      c.fillStyle = '#fff'; c.beginPath(); c.arc(n.x, n.y, 2.5, 0, 6.283); c.fill();
+      c.lineWidth = 1;
+      // label placed outward from the hub
+      var right = Math.cos(n.ang) >= -0.1;
+      var lx = n.x + (right ? 16 : -16), ly = n.y + (Math.sin(n.ang) < -0.9 ? -18 : 0);
+      var align = Math.sin(n.ang) < -0.9 ? 'center' : (right ? 'left' : 'right');
+      if (align === 'center') lx = n.x;
+      label(c, narrow ? SHORT[i] : SERVICES[i], lx, ly, align, narrow ? 11 : 14, 'rgba(255,255,255,0.92)');
+    });
+    // hub
+    c.fillStyle = '#070b14'; c.strokeStyle = '#fff'; c.lineWidth = 2;
+    c.beginPath(); c.arc(cx, cy, narrow ? 30 : 40, 0, 6.283); c.fill(); c.stroke();
+    var pulse = reduce ? 0 : (t % 2.4) / 2.4;
+    c.strokeStyle = 'rgba(255,255,255,' + (0.5 * (1 - pulse)).toFixed(3) + ')'; c.lineWidth = 1;
+    c.beginPath(); c.arc(cx, cy, (narrow ? 30 : 40) + pulse * 30, 0, 6.283); c.stroke();
+    label(c, 'xWave40', cx, cy, 'center', narrow ? 9 : 11, '#fff');
+  }
+
+  function frame(ms) {
+    var t = ms / 1000;
+    drawHero(t); drawOrbit(t);
+    if (!reduce) requestAnimationFrame(frame);
+  }
+  window.addEventListener('resize', function () { if (reduce) frame(0); });
+  if (reduce) frame(0); else requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
